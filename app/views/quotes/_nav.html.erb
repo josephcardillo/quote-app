@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper blue-grey darken-1">
+    <div class="container">
+      <a href="/" class="brand-logo left">Quotes</a>
+      <ul id="nav-mobile" class="right">
+        <% if signed_in? %>
+          <li><%= link_to "New Quote", new_quote_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

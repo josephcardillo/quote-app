@@ -1,0 +1,23 @@
+<div class="quote-box">
+  <%= form_with(model: quote, local: true) do |form| %>
+    <% if quote.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+        <ul>
+        <% quote.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "waves-effect waves-light btn" %>
+    </div>
+  <% end %>
+</div>
